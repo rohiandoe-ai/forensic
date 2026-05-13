@@ -1,0 +1,30 @@
+.tabsContainer { width: 100%; }
+.tabList {
+    display: flex; gap: 4px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.tab {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.tab:hover { color: var(--text-primary); }
+.activeTab {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+.panel { display: none; }
+.activePanel { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

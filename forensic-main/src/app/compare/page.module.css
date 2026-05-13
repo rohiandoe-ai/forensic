@@ -1,0 +1,197 @@
+.comparePage {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header p {
+    color: var(--text-muted);
+}
+
+.selectorSection {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.searchBar svg {
+    color: var(--text-muted);
+    margin-right: 15px;
+}
+
+.searchBar input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+}
+
+.caseChips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.chipActive {
+    background: rgba(0, 168, 255, 0.15);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.comparisonGrid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.caseColumn {
+    flex: 1;
+    min-width: 300px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.colHeader {
+    background: rgba(0, 168, 255, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-blue);
+}
+
+.colHeader h2 {
+    margin: 0;
+    color: var(--primary-blue);
+    font-family: var(--font-orbitron);
+    font-size: 1.2rem;
+}
+
+.colHeader button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.colHeader button:hover {
+    color: var(--danger);
+}
+
+.colBody {
+    padding: 20px;
+}
+
+.caseTitle {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.dataRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.dataRow span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dataRow strong {
+    color: var(--text-primary);
+}
+
+.statusBadge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.matchSection {
+    margin-top: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.matchSection h4 {
+    margin-top: 0;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.matchAlert {
+    color: var(--warning);
+    background: rgba(255, 152, 0, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.noMatch {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.emptyState {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+}

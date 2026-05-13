@@ -1,0 +1,118 @@
+.tourOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tourModal {
+    background: var(--card-bg);
+    border: 1px solid var(--primary-blue);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 168, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.closeBtn:hover {
+    color: var(--danger);
+}
+
+.tourHeader {
+    padding: 25px 30px 15px;
+    background: linear-gradient(135deg, rgba(0, 168, 255, 0.1), transparent);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stepIndicator {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    font-family: var(--font-orbitron);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.tourHeader h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.tourBody {
+    padding: 20px 30px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.tourBody p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.tourFooter {
+    padding: 15px 30px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.activeDot {
+    background: var(--primary-blue);
+    width: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}

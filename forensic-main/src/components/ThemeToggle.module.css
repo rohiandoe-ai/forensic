@@ -1,0 +1,24 @@
+.toggle {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.toggle:hover {
+    border-color: var(--primary-blue);
+    background: rgba(0, 168, 255, 0.1);
+}
+
+.moonIcon { display: inline; }
+.sunIcon { display: none; }
+
+:global(.light-theme) .moonIcon { display: none; }
+:global(.light-theme) .sunIcon { display: inline; }

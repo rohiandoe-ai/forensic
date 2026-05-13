@@ -1,0 +1,39 @@
+.thumbnail {
+    position: relative; cursor: pointer;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+.thumbnail img { width: 100%; height: 150px; object-fit: cover; display: block; }
+.overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); display: flex;
+    align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s ease;
+    color: white; font-size: 1.5rem;
+}
+.thumbnail:hover .overlay { opacity: 1; }
+.modal {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.9); z-index: 2000;
+    display: flex; flex-direction: column;
+}
+.modal.fullscreen { background: black; }
+.toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; background: rgba(10, 14, 23, 0.95);
+    border-bottom: 1px solid var(--border-color);
+}
+.toolbar h3 { font-size: 1rem; margin: 0; color: var(--text-primary); }
+.controls { display: flex; align-items: center; gap: 10px; }
+.controls button {
+    background: none; border: 1px solid var(--border-color);
+    border-radius: 6px; color: var(--text-secondary);
+    padding: 6px 10px; cursor: pointer; transition: all 0.3s ease;
+}
+.controls button:hover { border-color: var(--primary-blue); color: var(--text-primary); }
+.zoomLevel { color: var(--text-muted); font-size: 0.9rem; min-width: 40px; text-align: center; }
+.imageContainer {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    overflow: auto; cursor: pointer;
+}
+.imageContainer img { max-width: 90%; max-height: 90%; object-fit: contain; }

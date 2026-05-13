@@ -1,0 +1,59 @@
+.notFound {
+    min-height: calc(100vh - 200px);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+}
+.bgGrid {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        linear-gradient(rgba(255, 82, 82, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 82, 82, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+.content {
+    text-align: center; position: relative; z-index: 1;
+    padding: 40px 20px;
+}
+.iconWrapper {
+    width: 100px; height: 100px; margin: 0 auto 20px;
+    background: rgba(255, 82, 82, 0.1); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(255, 82, 82, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+}
+.iconWrapper svg {
+    font-size: 2.5rem; color: #ff5252;
+    filter: drop-shadow(0 0 10px rgba(255, 82, 82, 0.5));
+}
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.2); }
+    50% { box-shadow: 0 0 0 20px rgba(255, 82, 82, 0); }
+}
+.errorCode {
+    font-size: 6rem; font-weight: 900; margin-bottom: 0;
+    background: linear-gradient(135deg, #ff5252, #ff9800);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    line-height: 1;
+    font-family: var(--font-heading);
+}
+.title {
+    font-size: 1.5rem; margin-bottom: 15px; color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+.description { max-width: 450px; margin: 0 auto 30px; color: var(--text-muted); }
+.actions {
+    display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.classified {
+    display: inline-block; padding: 8px 20px;
+    border: 1px dashed rgba(255, 82, 82, 0.3);
+    border-radius: 4px; color: rgba(255, 82, 82, 0.5);
+    font-family: var(--font-heading); font-size: 0.75rem;
+    letter-spacing: 3px; text-transform: uppercase;
+}

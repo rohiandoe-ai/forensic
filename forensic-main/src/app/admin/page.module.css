@@ -1,0 +1,277 @@
+.admin {
+    padding: 20px 0 80px;
+    animation: slideUpFade 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    color: var(--text-primary);
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.intro {
+    margin-bottom: 48px;
+    padding: 60px;
+    background: linear-gradient(135deg, rgba(22, 27, 42, 0.8), rgba(10, 14, 23, 0.6));
+    border-radius: 32px;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0, 168, 255, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.intro h1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #ffffff, var(--primary-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.intro p {
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 750px;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    background: rgba(22, 27, 42, 0.4);
+    border-radius: 28px;
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.section:hover {
+    border-color: rgba(0, 168, 255, 0.15);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.sectionHeader h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.sectionHeader h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; left: 0;
+    width: 40px; height: 3px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.headerActions {
+    display: flex;
+    gap: 12px;
+}
+
+.tableWrap {
+    overflow-x: auto;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th {
+    padding: 20px 24px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    vertical-align: middle;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover td {
+    background: rgba(0, 168, 255, 0.02);
+    color: #fff;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userInfo strong {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.uid {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.6;
+}
+
+.badge {
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badgeAdmin {
+    background: rgba(255, 82, 82, 0.1);
+    color: #ff5252;
+    border: 1px solid rgba(255, 82, 82, 0.2);
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.1);
+}
+
+.badgeEmployee {
+    background: rgba(0, 168, 255, 0.1);
+    color: var(--primary-blue);
+    border: 1px solid rgba(0, 168, 255, 0.2);
+}
+
+.statusBadge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.statusProcessing { background: rgba(255, 167, 38, 0.15); color: #ffa726; }
+.statusAnalyzed { background: rgba(0, 230, 118, 0.15); color: #00e676; }
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.actions button {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.actions button:hover {
+    background: var(--primary-blue);
+    color: #fff;
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+}
+
+.deleteBtn {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 82, 82, 0.1);
+    background: rgba(255, 82, 82, 0.05);
+    color: rgba(255, 82, 82, 0.6);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+    background: #ff5252;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 82, 82, 0.3);
+}
+
+.addForm {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr auto auto;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    animation: fadeInDown 0.4s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.addForm input, .addForm select {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.addForm input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(0, 168, 255, 0.15);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1024px) {
+    .addForm { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .intro { padding: 40px 30px; }
+    .intro h1 { font-size: 2.2rem; }
+    .section { padding: 30px 20px; }
+    .addForm { grid-template-columns: 1fr; }
+}

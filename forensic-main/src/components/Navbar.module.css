@@ -1,0 +1,273 @@
+.navbar {
+    background: linear-gradient(180deg, rgba(10, 14, 23, 0.98) 0%, rgba(18, 24, 38, 0.95) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 168, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(0, 168, 255, 0.05);
+}
+
+.navContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+}
+
+.navBrand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-right: auto;
+    padding-left: 0;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.navBrand::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    transition: width 0.3s ease;
+}
+
+.navBrand:hover::after {
+    width: 100%;
+}
+
+.navBrand svg {
+    color: var(--primary-blue);
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 8px rgba(0, 168, 255, 0.4));
+}
+
+.highlight {
+    color: var(--accent-blue);
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+}
+
+.navMenu {
+    display: flex;
+    list-style: none;
+    gap: 2px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.navMenu li a {
+    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.navMenu li a svg {
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+.navMenu li a:hover {
+    color: var(--text-primary);
+    background: rgba(0, 168, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.navMenu li a:hover svg {
+    transform: scale(1.15);
+}
+
+.navMenu li a.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(0, 168, 255, 0.25), rgba(0, 210, 255, 0.15));
+    border: 1px solid rgba(0, 168, 255, 0.35);
+    box-shadow: 0 2px 12px rgba(0, 168, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.navMenu li a.active svg {
+    color: var(--accent-blue);
+    filter: drop-shadow(0 0 4px rgba(0, 210, 255, 0.5));
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.navUser {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 6px 12px 6px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navUser:hover {
+    background: rgba(0, 168, 255, 0.08);
+    border-color: rgba(0, 168, 255, 0.2);
+}
+
+.userAvatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.85rem;
+    border: 2px solid rgba(0, 168, 255, 0.3);
+    box-shadow: 0 0 12px rgba(0, 168, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.navUser:hover .userAvatar {
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+}
+
+.mobileMenuBtn:hover {
+    background: rgba(0, 168, 255, 0.1);
+    border-color: var(--primary-blue);
+}
+
+@media (max-width: 1200px) {
+    .navMenu li a {
+        padding: 7px 10px;
+        font-size: 0.82rem;
+        gap: 5px;
+    }
+    .navMenu li a span {
+        display: none;
+    }
+    .navMenu li a svg {
+        font-size: 1.1rem;
+    }
+    .navMenu {
+        gap: 2px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navContainer {
+        padding: 0 20px;
+    }
+    .navMenu {
+        gap: 1px;
+    }
+    .navMenu li a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+    .navUser span {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navMenu {
+        display: none;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 14, 23, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 20px;
+        gap: 4px;
+        border-top: 1px solid var(--border-color);
+        overflow-y: auto;
+        background: none;
+        border: none;
+        border-radius: 0;
+    }
+    
+    .navMenu.open {
+        display: flex;
+    }
+    
+    .navMenu li a {
+        padding: 14px 20px;
+        font-size: 1rem;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .navMenu li a span {
+        display: inline;
+    }
+
+    .navMenu li a svg {
+        font-size: 1rem;
+    }
+    
+    .mobileMenuBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navUser {
+        padding: 6px;
+        border-radius: 50%;
+    }
+    .navUser span {
+        display: none;
+    }
+    .navRight {
+        gap: 6px;
+    }
+    .navBrand {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,93 @@
+.lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightboxToolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.toolbarTitle {
+    font-family: var(--font-orbitron);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.toolbarActions {
+    display: flex;
+    gap: 15px;
+}
+
+.toolbarActions button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.toolbarActions button:hover {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.activeTool {
+    background: var(--primary-blue) !important;
+    border-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+.closeBtn {
+    background: rgba(255, 82, 82, 0.2) !important;
+    border-color: rgba(255, 82, 82, 0.5) !important;
+    color: #ff5252 !important;
+}
+
+.closeBtn:hover {
+    background: #ff5252 !important;
+    color: white !important;
+}
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.lightboxImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}

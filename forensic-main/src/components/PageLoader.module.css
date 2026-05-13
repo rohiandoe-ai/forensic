@@ -1,0 +1,7 @@
+.loader { padding: 20px 0; }
+.statRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+.filterRow { display: flex; gap: 15px; margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+    .statRow { grid-template-columns: repeat(2, 1fr); }
+}
